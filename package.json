@@ -1,6 +1,6 @@
 {
   "name": "wux",
-  "version": "1.1.0",
+  "version": "0.0.1",
   "description": "前端工程化链路",
   "main": "index.js",
   "repository": {
@@ -33,7 +33,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run release",
+      "pre-push": "lint-staged",
       "commit-msg": "validate-git-commit-msg"
     }
   }
