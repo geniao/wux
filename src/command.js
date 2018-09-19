@@ -9,6 +9,7 @@ export default class Command extends WuxCommand {
 
     this.usage = `用法: \n  ${chalk.green('$0', this.command)} [options]`
     this.ctx = path.resolve(__dirname, '..')
+    this.cwd = process.cwd()
     this.chalk = chalk
     this.yargs.epilogue('版权所有 ©2018 UX')
   }
