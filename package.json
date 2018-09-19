@@ -2,7 +2,8 @@
   "name": "wux",
   "version": "0.0.1",
   "description": "前端工程化链路",
-  "main": "index.js",
+  "es": "./es/index.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/geniao/wux.git"
@@ -14,6 +15,15 @@
     "url": "https://github.com/geniao/wux/issues"
   },
   "homepage": "https://github.com/geniao/wux#readme",
+  "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "chalk": "^2.4.1"
+  },
   "devDependencies": {
     "eslint": "^5.5.0",
     "eslint-plugin-react": "^7.11.1",
@@ -25,6 +35,7 @@
     "validate-git-commit-msg": "^0.1.5"
   },
   "scripts": {
+    "compile": "babel src -d ./lib -w -v",
     "release": "standard-version"
   },
   "lint-staged": {
