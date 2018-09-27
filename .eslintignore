@@ -1,5 +1,6 @@
 #
 lib
+dist
 packages/wux-command/src
 
 # Logs

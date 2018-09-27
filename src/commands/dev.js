@@ -1,21 +1,23 @@
 import Command from '../command'
-import { SyncHook, SyncWaterfallHook, AsyncSeriesWaterfallHook } from 'tapable'
+import { SyncWaterfallHook, AsyncSeriesWaterfallHook } from 'tapable'
 
 export default class DevCommand extends Command {
   constructor(rawArgv) {
     super(rawArgv)
 
     this.hooks = {
-      init: new SyncHook([]),
+      init: new SyncWaterfallHook(['config']),
       config: new SyncWaterfallHook(['config']),
       compiler: new SyncWaterfallHook(['config']),
       server: new AsyncSeriesWaterfallHook(['compiler', 'serverConfig', 'browserConfig']),
     }
 
     this.hooks.init.tap('DevCommand', () => {
-      const Te = this.getTechnicalEcology()
+      const { Suite, abc } = this.getTechnicalEcology()
 
-      new Te().apply(this)
+      new Suite().apply(this)
+
+      return abc
     })
 
     this.hooks.config.tap('DevCommand', () => {
@@ -65,10 +67,8 @@ export default class DevCommand extends Command {
   }
 
   async run() {
-    this.hooks.init.call()
-
-    const { webpackConfig, serverConfig, browserConfig } = this.hooks.config.call({})
-
+    const abc = this.hooks.init.call({})
+    const { webpackConfig, serverConfig, browserConfig } = this.hooks.config.call(abc)
     const compiler = this.hooks.compiler.call(webpackConfig)
     const result = await this.hooks.server.promise(compiler, serverConfig, browserConfig)
 

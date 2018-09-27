@@ -46,7 +46,10 @@ export default class Command extends WuxCommand {
       console.log(e)
     }
 
-    return require(`../packages/wux-suite-${abc.type}/lib/${this.command}`)
+    return {
+      Suite: require(`../packages/wux-suite-${abc.type}/lib/${this.command}`),
+      abc,
+    }
   }
 
   //

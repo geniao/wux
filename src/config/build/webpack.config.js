@@ -1,9 +1,8 @@
 import path from 'path'
 
-import browserConfig from './browser.config'
-import pkgDir from 'pkg-dir'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import pkgDir from 'pkg-dir'
 
 const pkg = require(path.resolve('package.json'))
 const dist = path.resolve('dist')
@@ -13,7 +12,6 @@ const webpackConfig = {
   devtool: 'cheap-module-source-map',
   mode: 'development',
   entry: [
-    `${require.resolve('webpack-dev-server/client')}?${browserConfig.url}`,
     path.resolve('src/index')
   ],
   output: {
