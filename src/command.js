@@ -1,6 +1,7 @@
 import path from 'path'
 
 import chalk from 'chalk'
+// import changeCase from 'change-case'
 import WuxCommand from '../packages/wux-command'
 
 export default class Command extends WuxCommand {

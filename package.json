@@ -21,9 +21,13 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
     "babel-plugin-add-module-exports": "^1.0.0",
     "chalk": "^2.4.1",
-    "cross-spawn": "^6.0.5"
+    "change-case": "^3.0.2",
+    "cross-spawn": "^6.0.5",
+    "jest": "^23.6.0"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
@@ -37,7 +41,8 @@
   },
   "scripts": {
     "compile": "babel src -d ./lib -w -v",
-    "release": "standard-version"
+    "release": "standard-version",
+    "test": "jest"
   },
   "lint-staged": {
     "**/*.js": "eslint"

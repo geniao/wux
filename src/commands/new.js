@@ -8,13 +8,22 @@ export default class NewCommand extends Command {
       s: {
         alias: 'suite',
         type: 'string',
-        description: '套件地址，必须是绝对地址 [内部使用]',
+        description: '技术套件',
+        default: 'react',
+        choices: ['react', 'vue', 'vanilla'],
+      },
+      t: {
+        alias: 'type',
+        type: 'string',
+        description: '项目类型',
+        default: 'component',
+        choices: ['component', 'module', 'page', 'app']
       }
     }
   }
 
-  async run({ argv }) {
-    argv.command = 'new'
+  async run() {
+
   }
 
   get description() {
