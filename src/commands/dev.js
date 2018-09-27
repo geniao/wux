@@ -1,12 +1,80 @@
 import Command from '../command'
+import { SyncHook, SyncWaterfallHook, AsyncSeriesWaterfallHook } from 'tapable'
 
 export default class DevCommand extends Command {
   constructor(rawArgv) {
     super(rawArgv)
+
+    this.hooks = {
+      init: new SyncHook([]),
+      config: new SyncWaterfallHook(['config']),
+      compiler: new SyncWaterfallHook(['config']),
+      server: new AsyncSeriesWaterfallHook(['compiler', 'serverConfig', 'browserConfig']),
+    }
+
+    this.hooks.init.tap('DevCommand', () => {
+      const Te = this.getTechnicalEcology()
+
+      new Te().apply(this)
+    })
+
+    this.hooks.config.tap('DevCommand', () => {
+      const { webpackConfig, serverConfig, browserConfig } = require(`../config/${this.command}`)
+
+      return {
+        webpackConfig,
+        serverConfig,
+        browserConfig
+      }
+    })
+
+    this.hooks.compiler.tap('DevCommand', (config) => {
+      const webpack = require('webpack')
+
+      return webpack(config)
+    })
+
+    this.hooks.server.tapPromise('DevCommand', (compiler, serverConfig, browserConfig) => {
+      return new Promise((resolve, reject) => {
+        const WebpackDevServer = require('webpack-dev-server')
+        const opn = require('opn')
+
+        const { url, host, port, } = browserConfig
+        const server = new WebpackDevServer(compiler, serverConfig)
+        const open = true
+
+        server.listen(port, host, err => {
+          if (err) {
+            return reject(false)
+          }
+
+          if (open) {
+            if (typeof open === 'boolean') {
+              // --open
+              opn(url)
+            } else {
+              // --open=firefox
+              opn(url, { app: open })
+            }
+
+            resolve(true)
+          }
+        })
+      })
+    })
   }
 
   async run() {
+    this.hooks.init.call()
 
+    const { webpackConfig, serverConfig, browserConfig } = this.hooks.config.call({})
+
+    const compiler = this.hooks.compiler.call(webpackConfig)
+    const result = await this.hooks.server.promise(compiler, serverConfig, browserConfig)
+
+    if (result) {
+      console.log('starting server...')
+    }
   }
 
   get description() {

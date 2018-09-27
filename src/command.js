@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 
 import chalk from 'chalk'
 // import changeCase from 'change-case'
@@ -33,6 +34,19 @@ export default class Command extends WuxCommand {
     } else {
       return _command
     }
+  }
+
+  getTechnicalEcology() {
+    const yaml = require('js-yaml')
+    let abc
+
+    try {
+      abc = yaml.safeLoad(fs.readFileSync(path.resolve('abc.yml'), 'utf8'))
+    } catch (e) {
+      console.log(e)
+    }
+
+    return require(`../packages/wux-suite-${abc.type}/lib/${this.command}`)
   }
 
   //

@@ -1,5 +1,17 @@
-import React from '..'
+import React, { Component } from '..'
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(typeof React).toBe('object')
+describe('React', () => {
+  test('React.createElement is function', () => {
+    expect(typeof React.createElement).toBe('function')
+  })
+
+  test('React.Component is function', () => {
+    expect(typeof React.Component).toBe('function')
+  })
+})
+
+describe('React.Component', () => {
+  test('React.Component is function', () => {
+    expect(typeof Component).toBe('function')
+  })
 })

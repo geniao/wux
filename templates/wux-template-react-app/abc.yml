@@ -1,0 +1,5 @@
+type: react
+output:
+  es: true
+  lib: true
+  umd: true

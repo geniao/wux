@@ -1,16 +1,17 @@
 {
-  "name": "wux-template-react-app",
+  "name": "wux-suite-react",
   "version": "0.0.1",
-  "main": "index.js",
+  "description": "",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "@babel/preset-react": "^7.0.0",
+    "pkg-dir": "^3.0.0",
+    "webpack-merge": "^4.1.4"
   }
 }
