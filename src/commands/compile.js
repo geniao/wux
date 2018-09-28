@@ -8,10 +8,13 @@ export default class CompileCommand extends Command {
   constructor(rawArgv) {
     super(rawArgv)
 
-    this.configFile = path.resolve('..', '..', 'babel.config.js')
+    this.configFile = path.resolve(this.ctx, 'babel.config.js')
   }
 
   async run() {
+    // console.log(this.cwd, this.ctx)
+    // console.log(this.configFile)
+    // console.log(path.join(this.ctx, 'packages', 'wux-suite-react', 'node_modules', '@babel/preset-react/lib/index.js'))
     spawn('npx', [
       'babel',
       path.join(this.cwd, 'src'),

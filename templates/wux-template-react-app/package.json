@@ -1,7 +1,9 @@
 {
   "name": "wux-template-react-app",
   "version": "0.0.1",
-  "main": "index.js",
+  "es": "./dist/es",
+  "main": "./dist/lib",
+  "umd": "./dist/umd",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,3 +1,4 @@
+import path from 'path'
 import Command from '../command'
 
 export default class CleanCommand extends Command {
@@ -6,6 +7,13 @@ export default class CleanCommand extends Command {
   }
 
   async run() {
+    const del = require('del')
+
+    del([path.join(this.cwd, 'dist')]).then(paths => {
+      if (paths.length > 0) {
+        console.log('删除文件夹: ', paths.join('\n'))
+      }
+    })
   }
 
   get description() {

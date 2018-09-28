@@ -21,10 +21,16 @@ function () {
   _proto.apply = function apply(command) {
     command.hooks.config.tap('WuxSuiteReact', function (_ref) {
       var webpackConfig = _ref.webpackConfig,
-          rest = _objectWithoutPropertiesLoose(_ref, ["webpackConfig"]);
+          esConfig = _ref.esConfig,
+          libConfig = _ref.libConfig,
+          rest = _objectWithoutPropertiesLoose(_ref, ["webpackConfig", "esConfig", "libConfig"]);
 
+      esConfig.presets.push(require.resolve('@babel/preset-react'));
+      libConfig.presets.push(require.resolve('@babel/preset-react'));
       return _extends({
-        webpackConfig: (0, _webpack.merge)(webpackConfig, _webpack.default)
+        webpackConfig: (0, _webpack.merge)(webpackConfig, _webpack.default),
+        esConfig: esConfig,
+        libConfig: libConfig
       }, rest);
     });
   };

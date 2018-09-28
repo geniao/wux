@@ -1,5 +1,4 @@
 type: react
 output:
-  es: true
-  lib: true
   umd: true
+  es: true

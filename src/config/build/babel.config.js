@@ -1,16 +1,14 @@
-module.exports = (api) => {
-  // api.cache(true)
-  api.cache.using(() => process.env.NODE_ENV === 'development')
-  api.assertVersion('^7.0')
+module.exports = (type) => {
+  if (!type) {
+    return {}
+  }
 
   let modules = 'commonjs'
 
-  if (typeof process.env.WUX_SUITE_TYPE !== 'undefined') {
-    if (process.env.WUX_SUITE_TYPE === 'es') {
-      modules = false
-    } else {
-      modules = process.env.WUX_SUITE_TYPE
-    }
+  if (type === 'es') {
+    modules = false
+  } else if (type === 'umd') {
+    modules = 'umd'
   }
 
   const config = {
@@ -18,9 +16,6 @@ module.exports = (api) => {
       ['@babel/preset-env', {
         loose: true,
         modules,
-        targets: {
-          esmodules: !modules
-        }
       }]
     ],
     plugins: [

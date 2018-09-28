@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import pkgDir from 'pkg-dir'
 
 const pkg = require(path.resolve('package.json'))
-const dist = path.resolve('dist')
+const dist = path.resolve('dist/umd')
 const context = pkgDir.sync(__dirname)
 
 const webpackConfig = {
