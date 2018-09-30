@@ -5,7 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _command = _interopRequireDefault(require("../command"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
+
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,27 +21,45 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var SiteCommand =
+var StartCommand =
 /*#__PURE__*/
 function (_Command) {
-  _inheritsLoose(SiteCommand, _Command);
+  _inheritsLoose(StartCommand, _Command);
 
-  function SiteCommand(rawArgv) {
-    return _Command.call(this, rawArgv) || this;
+  function StartCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
-  var _proto = SiteCommand.prototype;
+  var _proto = StartCommand.prototype;
 
   _proto.run =
   /*#__PURE__*/
   function () {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator.default.mark(function _callee(_ref) {
+      var argv, spawn, args;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              argv = _ref.argv;
+              spawn = require('cross-spawn');
+              args = (0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              });
+
+              if (args.includes('--daemon')) {
+                args.splice(args.indexOf('--daemon'), 1);
+              }
+
+              spawn('npx', ['egg-scripts', 'start', '--daemon'].concat(args), {
+                stdio: 'inherit',
+                cwd: this.ctx
+              });
+
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -47,20 +67,20 @@ function (_Command) {
       }, _callee, this);
     }));
 
-    return function run() {
+    return function run(_x) {
       return _run.apply(this, arguments);
     };
   }();
 
-  _createClass(SiteCommand, [{
+  _createClass(StartCommand, [{
     key: "description",
     get: function get() {
-      return '静态站点';
+      return '打开服务器';
     }
   }]);
 
-  return SiteCommand;
-}(_command.default);
+  return StartCommand;
+}(_wuxCommand.default);
 
-exports.default = SiteCommand;
+exports.default = StartCommand;
 module.exports = exports.default;

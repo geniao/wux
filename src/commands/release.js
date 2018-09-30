@@ -6,6 +6,7 @@ export default class ReleaseCommand extends Command {
   }
 
   async run() {
+
   }
 
   get description() {

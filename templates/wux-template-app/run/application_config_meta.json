@@ -1,0 +1,249 @@
+{
+  "keys": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/config/config.default.js",
+  "session": {
+    "maxAge": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-session/config/config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "xframe": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "mode": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg-view/config/config.default.js"
+  },
+  "env": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "name": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "version": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "description": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "main": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "scripts": {
+      "test": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    },
+    "keywords": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "author": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "license": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "dependencies": {
+      "egg": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    }
+  },
+  "baseDir": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "strict": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "depth": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "env": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "level": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "logging": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "port": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/weilin/luoyi/mainline/geniao/wux/templates/wux-template-app/node_modules/egg/config/config.default.js"
+}

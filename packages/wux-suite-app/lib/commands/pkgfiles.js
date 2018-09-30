@@ -5,7 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _command = _interopRequireDefault(require("../../../command"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
+
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,27 +21,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var GeneratorCommand =
+var PkgFilesCommand =
 /*#__PURE__*/
 function (_Command) {
-  _inheritsLoose(GeneratorCommand, _Command);
+  _inheritsLoose(PkgFilesCommand, _Command);
 
-  function GeneratorCommand(rawArgv) {
-    return _Command.call(this, rawArgv) || this;
+  function PkgFilesCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
-  var _proto = GeneratorCommand.prototype;
+  var _proto = PkgFilesCommand.prototype;
 
   _proto.run =
   /*#__PURE__*/
   function () {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator.default.mark(function _callee(_ref) {
+      var argv, spawn;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              argv = _ref.argv;
+              spawn = require('cross-spawn');
+              spawn('npx', ['egg-bin', 'pkgfiles'].concat((0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              })), {
+                stdio: 'inherit',
+                cwd: this.ctx
+              });
+
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -47,20 +61,20 @@ function (_Command) {
       }, _callee, this);
     }));
 
-    return function run() {
+    return function run(_x) {
       return _run.apply(this, arguments);
     };
   }();
 
-  _createClass(GeneratorCommand, [{
+  _createClass(PkgFilesCommand, [{
     key: "description",
     get: function get() {
-      return '脚手架生成器';
+      return 'Generate pkg.files automatically before npm publish, see ypkgfiles for detail';
     }
   }]);
 
-  return GeneratorCommand;
-}(_command.default);
+  return PkgFilesCommand;
+}(_wuxCommand.default);
 
-exports.default = GeneratorCommand;
+exports.default = PkgFilesCommand;
 module.exports = exports.default;

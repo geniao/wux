@@ -5,7 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _command = _interopRequireDefault(require("../command"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
+
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,8 +26,8 @@ var DebugCommand =
 function (_Command) {
   _inheritsLoose(DebugCommand, _Command);
 
-  function DebugCommand(rawArgv) {
-    return _Command.call(this, rawArgv) || this;
+  function DebugCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
   var _proto = DebugCommand.prototype;
@@ -35,11 +37,23 @@ function (_Command) {
   function () {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator.default.mark(function _callee(_ref) {
+      var argv, spawn;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              argv = _ref.argv;
+              spawn = require('cross-spawn');
+              spawn('npx', ['egg-bin', 'debug'].concat((0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              })), {
+                stdio: 'inherit',
+                cwd: this.ctx
+              });
+
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -47,7 +61,7 @@ function (_Command) {
       }, _callee, this);
     }));
 
-    return function run() {
+    return function run(_x) {
       return _run.apply(this, arguments);
     };
   }();
@@ -60,7 +74,7 @@ function (_Command) {
   }]);
 
   return DebugCommand;
-}(_command.default);
+}(_wuxCommand.default);
 
 exports.default = DebugCommand;
 module.exports = exports.default;

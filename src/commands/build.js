@@ -44,17 +44,6 @@ export default class BuildCommand extends Command {
       }
 
       return res
-      // const te = require('../fixtures/technical-ecology').getInstance()
-      // const teConfig = te.config
-      // const targets = teConfig.output && teConfig.output.targets || {}
-
-      // console.log(targets)
-
-      // const { webpackConfig } = require('./modules/build/config')
-
-      // return {
-      //   webpackConfig,
-      // }
     })
 
     // this.hooks.compiler.tap('BuildCommand', (config) => {

@@ -1,4 +1,4 @@
-import path from 'path'
+// import path from 'path'
 
 import Command from './command'
 
@@ -7,8 +7,11 @@ export default class EntryCommand extends Command {
     super(rawArgv)
 
     // this.usage = `用法: \n  ${this.chalk.green('$0 <command>')} [options]`
-    this.load(path.join(__dirname, 'commands'))
-    this.yargs.example('$0 dev', '打开本地服务器')
+    // this.load(path.join(__dirname, 'commands'))
+
+    // this.add('dev', path.join(__dirname, '..', 'packages', 'wux-suite-app', 'lib/commands/dev.js'))
+    // this.config = this.getConfig()
+    // this.getCommands()
   }
 
   get description() {

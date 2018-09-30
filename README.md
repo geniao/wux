@@ -11,5 +11,5 @@ new、generator|进行中|2019/09/24
 start、stop、dev、build|未开始|2019/09/30
 clean、dist|未开始|2019/10/07
 test、unittest|未开始|2019/10/07
-site、release|未开始|2019/10/13
-debug|未开始|2019/10/18
+release|未开始|2019/10/13
+site、debug|中止|2019/10/18

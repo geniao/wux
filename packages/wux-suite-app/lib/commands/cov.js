@@ -5,7 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _command = _interopRequireDefault(require("../command"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
+
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,46 +21,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var NewCommand =
+var CovCommand =
 /*#__PURE__*/
 function (_Command) {
-  _inheritsLoose(NewCommand, _Command);
+  _inheritsLoose(CovCommand, _Command);
 
-  function NewCommand(rawArgv) {
-    var _this;
-
-    _this = _Command.call(this, rawArgv) || this;
-    _this.options = {
-      s: {
-        alias: 'suite',
-        type: 'string',
-        description: '技术套件',
-        default: 'react',
-        choices: ['react', 'vue', 'vanilla', 'app']
-      },
-      t: {
-        alias: 'type',
-        type: 'string',
-        description: '项目类型',
-        default: 'component',
-        choices: ['component', 'module', 'page', 'app']
-      }
-    };
-    return _this;
+  function CovCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
-  var _proto = NewCommand.prototype;
+  var _proto = CovCommand.prototype;
 
   _proto.run =
   /*#__PURE__*/
   function () {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator.default.mark(function _callee(_ref) {
+      var argv, spawn;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              argv = _ref.argv;
+              spawn = require('cross-spawn');
+              spawn('npx', ['egg-bin', 'cov'].concat((0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              })), {
+                stdio: 'inherit',
+                cwd: this.ctx
+              });
+
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -66,34 +61,20 @@ function (_Command) {
       }, _callee, this);
     }));
 
-    return function run() {
+    return function run(_x) {
       return _run.apply(this, arguments);
     };
   }();
 
-  _proto.initializing = function initializing() {};
-
-  _proto.prompting = function prompting() {};
-
-  _proto.configuring = function configuring() {};
-
-  _proto.writing = function writing() {};
-
-  _proto.conflicts = function conflicts() {};
-
-  _proto.install = function install() {};
-
-  _proto.end = function end() {};
-
-  _createClass(NewCommand, [{
+  _createClass(CovCommand, [{
     key: "description",
     get: function get() {
-      return '新建项目';
+      return '测试报告';
     }
   }]);
 
-  return NewCommand;
-}(_command.default);
+  return CovCommand;
+}(_wuxCommand.default);
 
-exports.default = NewCommand;
+exports.default = CovCommand;
 module.exports = exports.default;

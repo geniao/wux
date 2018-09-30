@@ -5,11 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _path = _interopRequireDefault(require("path"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
 
-var _crossSpawn = _interopRequireDefault(require("cross-spawn"));
-
-var _command = _interopRequireDefault(require("../command"));
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,40 +21,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var CompileCommand =
+var StopCommand =
 /*#__PURE__*/
 function (_Command) {
-  _inheritsLoose(CompileCommand, _Command);
+  _inheritsLoose(StopCommand, _Command);
 
-  function CompileCommand(rawArgv) {
-    var _this;
-
-    _this = _Command.call(this, rawArgv) || this;
-    _this.configFile = _path.default.resolve(_this.ctx, 'babel.config.js');
-    return _this;
+  function StopCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
-  var _proto = CompileCommand.prototype;
+  var _proto = StopCommand.prototype;
 
   _proto.run =
   /*#__PURE__*/
   function () {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator.default.mark(function _callee(_ref) {
+      var argv, spawn;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              // console.log(this.cwd, this.ctx)
-              // console.log(this.configFile)
-              // console.log(path.join(this.ctx, 'packages', 'wux-suite-react', 'node_modules', '@babel/preset-react/lib/index.js'))
-              (0, _crossSpawn.default)('npx', ['babel', _path.default.join(this.cwd, 'src'), '-d', _path.default.join(this.cwd, 'lib'), '-w', '-v', '--config-file', this.configFile], {
+              argv = _ref.argv;
+              spawn = require('cross-spawn');
+              spawn('npx', ['egg-scripts', 'stop'].concat((0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              })), {
                 stdio: 'inherit',
                 cwd: this.ctx
               });
 
-            case 1:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -64,20 +61,20 @@ function (_Command) {
       }, _callee, this);
     }));
 
-    return function run() {
+    return function run(_x) {
       return _run.apply(this, arguments);
     };
   }();
 
-  _createClass(CompileCommand, [{
+  _createClass(StopCommand, [{
     key: "description",
     get: function get() {
-      return '编译';
+      return '关闭服务器';
     }
   }]);
 
-  return CompileCommand;
-}(_command.default);
+  return StopCommand;
+}(_wuxCommand.default);
 
-exports.default = CompileCommand;
+exports.default = StopCommand;
 module.exports = exports.default;

@@ -10,7 +10,7 @@ export default class NewCommand extends Command {
         type: 'string',
         description: '技术套件',
         default: 'react',
-        choices: ['react', 'vue', 'vanilla'],
+        choices: ['react', 'vue', 'vanilla', 'app'],
       },
       t: {
         alias: 'type',

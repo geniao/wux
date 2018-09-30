@@ -1,15 +1,16 @@
 import Command from '../command'
-import { SyncWaterfallHook, AsyncSeriesWaterfallHook } from 'tapable'
-
+import { SyncWaterfallHook } from 'tapable'
+// AsyncSeriesWaterfallHook
 export default class DevCommand extends Command {
   constructor(rawArgv) {
     super(rawArgv)
 
     this.hooks = {
       init: new SyncWaterfallHook(['config']),
-      config: new SyncWaterfallHook(['config']),
-      compiler: new SyncWaterfallHook(['config']),
-      server: new AsyncSeriesWaterfallHook(['compiler', 'serverConfig', 'browserConfig']),
+      run: SyncWaterfallHook(['config'])
+      // config: new SyncWaterfallHook(['config']),
+      // compiler: new SyncWaterfallHook(['config']),
+      // server: new AsyncSeriesWaterfallHook(['compiler', 'serverConfig', 'browserConfig']),
     }
 
     this.hooks.init.tap('DevCommand', () => {

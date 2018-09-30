@@ -5,7 +5,9 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-var _command = _interopRequireDefault(require("../command"));
+var _wuxCommand = _interopRequireDefault(require("wux-command"));
+
+var _dargs = _interopRequireDefault(require("dargs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,20 +21,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var OutherCommand =
+var DevCommand =
 /*#__PURE__*/
 function (_Command) {
-  _inheritsLoose(OutherCommand, _Command);
+  _inheritsLoose(DevCommand, _Command);
 
-  function OutherCommand(rawArgv) {
-    var _this;
-
-    _this = _Command.call(this, rawArgv) || this;
-    _this.usage = '用法: \n  $0 outher [options]';
-    return _this;
+  function DevCommand() {
+    return _Command.apply(this, arguments) || this;
   }
 
-  var _proto = OutherCommand.prototype;
+  var _proto = DevCommand.prototype;
 
   _proto.run =
   /*#__PURE__*/
@@ -40,15 +38,22 @@ function (_Command) {
     var _run = _asyncToGenerator(
     /*#__PURE__*/
     _regenerator.default.mark(function _callee(_ref) {
-      var argv;
+      var argv, spawn;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               argv = _ref.argv;
-              argv.command = 'outher';
+              spawn = require('cross-spawn');
+              spawn('npx', ['egg-bin', 'dev'].concat((0, _dargs.default)(argv, {
+                excludes: ['$0'],
+                useEquals: false
+              })), {
+                stdio: 'inherit',
+                cwd: this.ctx
+              });
 
-            case 2:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -61,15 +66,15 @@ function (_Command) {
     };
   }();
 
-  _createClass(OutherCommand, [{
+  _createClass(DevCommand, [{
     key: "description",
     get: function get() {
-      return '其它';
+      return '开发服务器';
     }
   }]);
 
-  return OutherCommand;
-}(_command.default);
+  return DevCommand;
+}(_wuxCommand.default);
 
-exports.default = OutherCommand;
+exports.default = DevCommand;
 module.exports = exports.default;

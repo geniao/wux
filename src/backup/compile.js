@@ -12,9 +12,6 @@ export default class CompileCommand extends Command {
   }
 
   async run() {
-    // console.log(this.cwd, this.ctx)
-    // console.log(this.configFile)
-    // console.log(path.join(this.ctx, 'packages', 'wux-suite-react', 'node_modules', '@babel/preset-react/lib/index.js'))
     spawn('npx', [
       'babel',
       path.join(this.cwd, 'src'),
@@ -22,6 +19,7 @@ export default class CompileCommand extends Command {
       path.join(this.cwd, 'lib'),
       '-w',
       '-v',
+      '--delete-dir-on-start',
       '--config-file', this.configFile
     ], {
       stdio: 'inherit',
